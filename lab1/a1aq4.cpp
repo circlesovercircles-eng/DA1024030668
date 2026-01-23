@@ -35,19 +35,15 @@ int main() {
         }
 
 
-        unordered_map<int,int> freq;
-        freq[0] = 1;
-
         int prefix = 0;
         bool found = false;
 
         for (int i = 0; i < n; i++) {
             prefix += B[i];
-            if (freq.count(prefix - k)) {
+            if ((prefix - k) == 0) {
                 found = true;
                 break;
             }
-            freq[prefix]++;
         }
 
         if (found) {
